@@ -1,0 +1,84 @@
+.header {
+  background: var(--gray-700);
+  height: 12.5rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.header > .logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header > .logo img {
+  margin-right: 0.75rem;
+}
+
+.header > .logo span {
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.header > .logo :nth-child(2) {
+  color: var(--blue);
+}
+
+.header > .logo :nth-child(3) {
+  color: var(--purple-dark);
+}
+
+main {
+  margin: 0 auto;
+  width: 50vw;
+
+  position: relative;
+  bottom: 26px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  margin-bottom: 4rem;
+}
+
+form > button[type="submit"] {
+  padding: 1rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: var(--blue-dark);
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  transition: background-color 0.1s;
+}
+
+form > button[type="submit"]:not(:disabled):hover {
+  background: var(--blue);
+}
+
+form > button[type="submit"]:disabled {
+  cursor: default;
+  background: var(--gray-300);
+}
+
+@media (max-width: 768px) {
+  main {
+    width: calc(100vw - 4rem);
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  form > button[type="submit"] {
+    justify-content: center;
+  }
+}
