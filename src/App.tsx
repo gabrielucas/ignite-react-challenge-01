@@ -1,12 +1,16 @@
-import { Header } from './components/Header'
-import { TaskManager } from './components/TaskManager'
+import { FunctionComponent } from 'react'
 
-function App() {
+import { Home } from './pages/Home'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from './styles/global'
+import { defaulTheme } from './styles/themes/default'
+
+const App: FunctionComponent = () => {
   return (
-    <>
-      <Header />
-      <TaskManager />
-    </>
+    <ThemeProvider theme={defaulTheme}>
+      <Home />
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
 

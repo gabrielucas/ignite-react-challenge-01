@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { CounterBox } from './counter.styles'
+import { CounterBox } from './styles'
 
 interface ICounterProps {
   title: string

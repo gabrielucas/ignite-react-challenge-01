@@ -1,10 +1,10 @@
 import { Dispatch, FunctionComponent, SetStateAction, useMemo } from 'react'
 
-import { Counter } from '../Counter/Counter'
-import { NoTasks } from '../NoTasks/NoTasks'
-import { TasksContainer, TasksHeader } from './tasks.styles'
-import { Task } from '../Task/Task'
-import { ITask } from '../../App'
+import { Counter } from '../Counter'
+import { TasksContainer, TasksHeader } from './styles'
+import Task from '../Task'
+import { ITask } from '../TaskManager'
+import NoTasks from '../NoTasks'
 
 interface ITasksProps {
   tasks: ITask[]
