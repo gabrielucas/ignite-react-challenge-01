@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const CounterBox = styled.div<{ $type: string }>`
   display: flex;
@@ -8,8 +8,8 @@ const CounterBox = styled.div<{ $type: string }>`
     font-size: 0.875rem;
     font-weight: 700;
     color: ${({ $type }) => {
-      if ($type === "created") return `var(--blue-dark)`
-      if ($type === "completed") return `var(--purple)`
+      if ($type === 'created') return `var(--blue-dark)`
+      if ($type === 'completed') return `var(--purple)`
     }};
   }
 

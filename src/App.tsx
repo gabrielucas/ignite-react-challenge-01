@@ -1,12 +1,12 @@
-import { ChangeEventHandler, FormEventHandler, useState } from "react"
-import { faker } from "@faker-js/faker"
+import { ChangeEventHandler, FormEventHandler, useState } from 'react'
+import { faker } from '@faker-js/faker'
 
-import "./App.css"
+import './App.css'
 
-import Plus from "./assets/plus.svg"
-import Rocketseat from "./assets/rocket.svg"
-import { Input } from "./components/Input/Input"
-import { Tasks } from "./components/Tasks/Tasks"
+import Plus from './assets/plus.svg'
+import Rocketseat from './assets/rocket.svg'
+import { Input } from './components/Input/Input'
+import { Tasks } from './components/Tasks/Tasks'
 
 export interface ITask {
   id: string
@@ -16,7 +16,7 @@ export interface ITask {
 
 function App() {
   const [tasks, setTasks] = useState<ITask[]>([])
-  const [newTask, setNewTask] = useState("")
+  const [newTask, setNewTask] = useState('')
 
   const handleNewTask: ChangeEventHandler<HTMLInputElement> = (event) =>
     setNewTask(event.target.value)
@@ -30,7 +30,7 @@ function App() {
         { description: newTask, id: faker.string.uuid(), isCompleted: false },
       ])
 
-      setNewTask("")
+      setNewTask('')
     }
   }
 
@@ -53,7 +53,7 @@ function App() {
           />
           <button disabled={!newTask} type="submit">
             Criar
-            <img src={Plus} title="Adicicionar to do" />
+            <img src={Plus} alt="" title="Adicicionar to do" />
           </button>
         </form>
 

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const TaskContainer = styled.li<{ checked: boolean }>`
   background: var(--gray-500);
@@ -18,9 +18,9 @@ const TaskContainer = styled.li<{ checked: boolean }>`
     line-height: 140%;
 
     text-decoration-line: ${({ checked }) =>
-      checked ? "line-through" : "none"};
+      checked ? 'line-through' : 'none'};
 
-    color: ${({ checked }) => (checked ? "var(--gray-300)" : "inherit")};
+    color: ${({ checked }) => (checked ? 'var(--gray-300)' : 'inherit')};
   }
 
   & > button {

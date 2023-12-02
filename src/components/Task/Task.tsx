@@ -4,12 +4,12 @@ import {
   SetStateAction,
   memo,
   useCallback,
-} from "react"
+} from 'react'
 
-import { Trash } from "@phosphor-icons/react"
-import { TaskContainer } from "./task.styles"
-import { Checkbox } from "../Checkbox/Checkbox"
-import { ITask } from "../../App"
+import { Trash } from '@phosphor-icons/react'
+import { TaskContainer } from './task.styles'
+import { Checkbox } from '../Checkbox/Checkbox'
+import { ITask } from '../../App'
 
 interface ITaskProps {
   task: ITask
@@ -29,16 +29,16 @@ export const Task: FunctionComponent<ITaskProps> = memo(
           }
 
           return currentTask
-        })
+        }),
       )
     }, [setTasks, task])
 
     const handleDeleteOneTask = useCallback(
       (selectedTask: ITask) =>
         setTasks((previousTasks) =>
-          previousTasks.filter((task) => task.id !== selectedTask.id)
+          previousTasks.filter((task) => task.id !== selectedTask.id),
         ),
-      [setTasks]
+      [setTasks],
     )
 
     return (
@@ -57,5 +57,5 @@ export const Task: FunctionComponent<ITaskProps> = memo(
         </button>
       </TaskContainer>
     )
-  }
+  },
 )

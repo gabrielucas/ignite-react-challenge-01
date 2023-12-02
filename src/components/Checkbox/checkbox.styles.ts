@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const CheckboxContainer = styled.div`
   width: 1rem;
@@ -8,7 +8,7 @@ const CheckboxContainer = styled.div`
   justify-content: center;
 `
 
-const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   width: 1px;
   margin: -1px;
   overflow: hidden;
@@ -26,17 +26,19 @@ const StyledCheckbox = styled.label<{ checked: boolean }>`
   cursor: pointer;
 
   border: 2px solid
-    ${({ checked }) => (checked ? "var(--purple-dark)" : "var(--blue)")};
+    ${({ checked }) => (checked ? 'var(--purple-dark)' : 'var(--blue)')};
 
-  background-color: ${({ checked }) => checked && "var(--purple-dark)"};
+  background-color: ${({ checked }) => checked && 'var(--purple-dark)'};
 
-  transition: border 0.1s, background-color 0.1s;
+  transition:
+    border 0.1s,
+    background-color 0.1s;
 
   &:hover {
     border: 2px solid
-      ${({ checked }) => (checked ? "var(--purple)" : "var(--blue-dark)")};
+      ${({ checked }) => (checked ? 'var(--purple)' : 'var(--blue-dark)')};
     background-color: ${({ checked }) =>
-      checked ? "var(--purple)" : "var(--blue-dark-400)"};
+      checked ? 'var(--purple)' : 'var(--blue-dark-400)'};
   }
 `
 
