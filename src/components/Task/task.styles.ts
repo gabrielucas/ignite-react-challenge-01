@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 const TaskContainer = styled.li<{ checked: boolean }>`
-  background: var(--gray-500);
-  border: 1px solid var(--gray-400);
+  background: ${({ theme }) => theme['--gray-500']};
+  border: 1px solid ${({ theme }) => theme['--gray-400']};
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
   border-radius: 8px;
 
@@ -20,7 +20,8 @@ const TaskContainer = styled.li<{ checked: boolean }>`
     text-decoration-line: ${({ checked }) =>
       checked ? 'line-through' : 'none'};
 
-    color: ${({ checked }) => (checked ? 'var(--gray-300)' : 'inherit')};
+    color: ${({ checked, theme }) =>
+      checked ? `${theme['--gray-300']}` : 'inherit'};
   }
 
   & > button {
@@ -30,7 +31,7 @@ const TaskContainer = styled.li<{ checked: boolean }>`
 
     &:hover > svg {
       transition: fill 0.1s;
-      fill: var(--danger);
+      fill: ${({ theme }) => theme['--danger']};
     }
   }
 `

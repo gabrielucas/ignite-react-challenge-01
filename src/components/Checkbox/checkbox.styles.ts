@@ -26,9 +26,11 @@ const StyledCheckbox = styled.label<{ checked: boolean }>`
   cursor: pointer;
 
   border: 2px solid
-    ${({ checked }) => (checked ? 'var(--purple-dark)' : 'var(--blue)')};
+    ${({ checked, theme }) =>
+      checked ? `${theme['--purple-dark']}` : `${theme['--blue']}`};
 
-  background-color: ${({ checked }) => checked && 'var(--purple-dark)'};
+  background-color: ${({ checked, theme }) =>
+    checked && `${theme['--purple-dark']}`};
 
   transition:
     border 0.1s,
@@ -36,9 +38,10 @@ const StyledCheckbox = styled.label<{ checked: boolean }>`
 
   &:hover {
     border: 2px solid
-      ${({ checked }) => (checked ? 'var(--purple)' : 'var(--blue-dark)')};
-    background-color: ${({ checked }) =>
-      checked ? 'var(--purple)' : 'var(--blue-dark-400)'};
+      ${({ checked, theme }) =>
+        checked ? `${theme['--purple']}` : `${theme['--blue-dark']}`};
+    background-color: ${({ checked, theme }) =>
+      checked ? `${theme['--purple']}` : `${theme['--blue-dark-400']}`};
   }
 `
 
