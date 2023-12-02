@@ -1,9 +1,9 @@
-import { memo } from "react"
-import { NoTasksContainer } from "./no-tasks.styles"
+import { FunctionComponent, memo } from 'react'
+import { NoTasksContainer } from './styles'
 
-import { ClipboardText } from "@phosphor-icons/react"
+import { ClipboardText } from '@phosphor-icons/react'
 
-export const NoTasks = memo(() => {
+const NoTasks: FunctionComponent = () => {
   return (
     <NoTasksContainer>
       <ClipboardText size={56} fill="#333333" />
@@ -15,4 +15,6 @@ export const NoTasks = memo(() => {
       </p>
     </NoTasksContainer>
   )
-})
+}
+
+export default memo(NoTasks)

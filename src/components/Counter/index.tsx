@@ -1,10 +1,10 @@
-import { FunctionComponent } from "react"
-import { CounterBox } from "./counter.styles"
+import { FunctionComponent } from 'react'
+import { CounterBox } from './styles'
 
 interface ICounterProps {
   title: string
   value: number | string
-  type: "created" | "completed"
+  type: 'created' | 'completed'
 }
 
 export const Counter: FunctionComponent<ICounterProps> = ({

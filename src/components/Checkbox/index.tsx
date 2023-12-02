@@ -1,11 +1,7 @@
-import { FunctionComponent } from "react"
+import { FunctionComponent } from 'react'
 
-import {
-  CheckboxContainer,
-  HiddenCheckbox,
-  StyledCheckbox,
-} from "./checkbox.styles"
-import { Check } from "@phosphor-icons/react"
+import { CheckboxContainer, HiddenCheckbox, StyledCheckbox } from './styles'
+import { Check } from '@phosphor-icons/react'
 
 export interface ICheckboxProps {
   checked: boolean
