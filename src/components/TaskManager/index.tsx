@@ -2,6 +2,7 @@ import {
   ChangeEventHandler,
   FormEventHandler,
   useCallback,
+  useEffect,
   useState,
 } from 'react'
 import { faker } from '@faker-js/faker'
@@ -11,16 +12,25 @@ import { Tasks } from '../Tasks'
 
 import Plus from '../../assets/plus.svg'
 import { CreateTaskButton, TaskManagerContainer } from './styles'
-
-export interface ITask {
-  id: string
-  description: string
-  isCompleted: boolean
-}
+import { getTasks } from './API/getTasks'
+import { ITask } from './API/interfaces/ITask'
 
 export const TaskManager = () => {
   const [tasks, setTasks] = useState<ITask[]>([])
   const [newTask, setNewTask] = useState('')
+
+  const handleGettingTasks = useCallback(async () => {
+    try {
+      const tasksInCache = await getTasks()
+      setTasks(tasksInCache)
+    } catch (error) {
+      console.log(error)
+    }
+  }, [])
+
+  useEffect(() => {
+    handleGettingTasks()
+  }, [handleGettingTasks])
 
   const handleNewTask: ChangeEventHandler<HTMLInputElement> = (event) =>
     setNewTask(event.target.value)

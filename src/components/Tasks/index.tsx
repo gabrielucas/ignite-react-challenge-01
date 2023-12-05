@@ -3,8 +3,8 @@ import { Dispatch, FunctionComponent, SetStateAction, useMemo } from 'react'
 import { Counter } from '../Counter'
 import { TasksContainer, TasksHeader } from './styles'
 import Task from '../Task'
-import { ITask } from '../TaskManager'
 import NoTasks from '../NoTasks'
+import { ITask } from '../TaskManager/API/interfaces/ITask'
 
 interface ITasksProps {
   tasks: ITask[]

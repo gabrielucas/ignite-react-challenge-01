@@ -9,7 +9,7 @@ import {
 import { Trash } from '@phosphor-icons/react'
 import { TaskContainer } from './styles'
 import { Checkbox } from '../Checkbox'
-import { ITask } from '../TaskManager'
+import { ITask } from '../TaskManager/API/interfaces/ITask'
 
 interface ITaskProps {
   task: ITask
