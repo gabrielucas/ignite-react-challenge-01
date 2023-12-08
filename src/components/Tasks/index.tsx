@@ -1,17 +1,14 @@
-import { Dispatch, FunctionComponent, SetStateAction, useMemo } from 'react'
+import { FunctionComponent, useMemo } from 'react'
 
 import { Counter } from '../Counter'
 import { TasksContainer, TasksHeader } from './styles'
 import Task from '../Task'
-import { ITask } from '../TaskManager'
 import NoTasks from '../NoTasks'
+import { useTodoContext } from '../../context/useTodoContext/useTodoContext'
 
-interface ITasksProps {
-  tasks: ITask[]
-  setTasks: Dispatch<SetStateAction<ITask[]>>
-}
+export const Tasks: FunctionComponent = () => {
+  const { tasks } = useTodoContext()
 
-export const Tasks: FunctionComponent<ITasksProps> = ({ tasks, setTasks }) => {
   const completedTasks = useMemo(() => {
     const amount = tasks.filter((task) => task.isCompleted)?.length
     return amount
@@ -30,7 +27,7 @@ export const Tasks: FunctionComponent<ITasksProps> = ({ tasks, setTasks }) => {
       {tasks?.length ? (
         <ul>
           {tasks.map((task) => (
-            <Task key={task.id} setTasks={setTasks} task={task} />
+            <Task key={task.id} task={task} />
           ))}
         </ul>
       ) : (

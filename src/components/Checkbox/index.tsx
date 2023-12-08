@@ -14,7 +14,7 @@ export const Checkbox: FunctionComponent<ICheckboxProps> = ({
 }) => {
   return (
     <CheckboxContainer>
-      <HiddenCheckbox checked={checked} />
+      <HiddenCheckbox checked={checked} onChange={() => {}} />
       <StyledCheckbox onClick={onChangeTasksStatus} checked={checked}>
         {checked && <Check size={10} weight="bold" />}
       </StyledCheckbox>

@@ -1,22 +1,18 @@
-import {
-  Dispatch,
-  FunctionComponent,
-  SetStateAction,
-  memo,
-  useCallback,
-} from 'react'
+import { FunctionComponent, memo, useCallback } from 'react'
 
 import { Trash } from '@phosphor-icons/react'
 import { TaskContainer } from './styles'
 import { Checkbox } from '../Checkbox'
-import { ITask } from '../TaskManager'
+import { ITask } from '../../@types/commons/interfaces/ITask'
+import { useTodoContext } from '../../context/useTodoContext/useTodoContext'
 
 interface ITaskProps {
   task: ITask
-  setTasks: Dispatch<SetStateAction<ITask[]>>
 }
 
-const Task: FunctionComponent<ITaskProps> = ({ task, setTasks }) => {
+const Task: FunctionComponent<ITaskProps> = ({ task }) => {
+  const { setTasks } = useTodoContext()
+
   const handleChangeTaskStatus = useCallback(() => {
     setTasks((previousTasks) =>
       previousTasks.map((currentTask) => {
@@ -31,6 +27,15 @@ const Task: FunctionComponent<ITaskProps> = ({ task, setTasks }) => {
       }),
     )
   }, [setTasks, task])
+
+  // const saveInDB = useCallback(async () => {
+  //   try {
+  //     await createTasksInDatabase(tasks)
+  //     setTasks(null)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }, [setTasks, tasks])
 
   const handleDeleteOneTask = useCallback(
     (selectedTask: ITask) =>
